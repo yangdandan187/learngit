@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<meta http-equiv="Cache-Control" content="max-age=0">
+<meta name="apple-touch-fullscreen" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="format-detection" content="telephone=no" />
+<title>表单</title>
+<link rel="stylesheet" type="text/css" href="css/css.css"/>
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+</head>
+
+<body>
+	<div class="content">
+		<img src="images/super_1.jpg" alt="">
+		<img src="images/super_2.jpg" alt="">
+		<img src="images/super_3.jpg" alt="">
+		<img src="images/super_4.jpg" alt="">
+		<img src="images/super_5.jpg" alt="">
+		<img class="super_bt" src="images/super_6.jpg" alt="">
+		<p class="super_only">任性低价，特邀参与，仅在4月15日！</p>
+		<div class="center">
+			<img src="images/super_7.jpg" alt="">
+			<div class="order_before" style="display: none;">
+				<form class="form1">
+					<p class="super_order">名额有限 立即预约</p>
+					<p class="super_buy">名额有限 立即抢购</p>
+					<div class="inputbd clearfix">
+						<p class="left">孩子姓名</p>
+						<input class="name left" type="text" />
+					</div>
+					<div class="inputbd clearfix">
+						<p class="left">孩子年龄</p>
+						<input class="age left" type="text" />
+					</div>
+					<div class="inputbd clearfix">
+						<p class="left">家长电话</p>
+						<input class="tel left" type="text" />
+					</div>
+					<div class="submitbd">
+						<p class="submit_order" onclick="checkform(this)">立刻预约</p>
+						<p class="submit_buy" onclick="checkform(this)">立刻抢购</p>
+					</div>
+				</form>	
+				<p class="super_word padtb">预约后，4月15日可享超级团购价格购买课程</p>
+			</div>
+			<div class="order_after">
+				<p class="font18">您已预约成功！</p>
+				<p>24节课仅1999元！</p>
+				<img class="ewm" src="images/ewm.jpg" alt="">
+				<p>长按/扫二维码支付</p>
+			</div>
+			<p class="super_word">（每人仅限购一次）</p>
+		</div>
+		<section class="footer">
+			<p>详情请致电官方热线：400 6750 370<br>呤呤英语官方网站：http://www.snaplingo.com.cn/</p>
+		</section>
+	</div>
+	<!--弹框-->
+    <div class="tc_bg">
+    	<div class="tc_box">
+        	<a href="javascript:void(0)"><img class="tc_close"  src="images/tc_close.png" alt=""></a>
+        	<img class="pic_center tc_success" src="images/tc_success.png" alt="">
+        	<div class="tc_order">
+        		<h2>您已预约成功！</h2>
+        		<p class="tc_word">-&nbsp;&nbsp;您可在4月15日进入此页面进行支付<br>-&nbsp;&nbsp;或致电400-6750-370了解详情<br>-&nbsp;&nbsp;课程顾问老师会和您联系确认后续事宜。</p>
+        	</div>
+			<div class="tc_buy">
+        		<h2>您已抢购成功！</h2>
+        		<p class="tc_word">-&nbsp;&nbsp;现在您关闭此提示后即可进行支付<br>-&nbsp;&nbsp;或致电400-6750-370了解详情<br>-&nbsp;&nbsp;课程顾问老师会和您联系确认后续事宜。</p>
+        	</div>
+    		<div class="tc_bottom">
+    			<img class="tc_sanjiao" src="images/tc_sanjiao.png" alt="">
+    			<img class="pic_center tc_bottomlogo" src="images/tc_bottomlogo.png" alt="">
+    		</div>
+    	</div>
+    </div>      
+<script type="text/javascript" src="js/form.js"></script>
+<script type="text/javascript">
+	$("body").on("focus",".form1 input",function(e){
+		e = e || window.event;
+		e.stopPropagation();
+		var h =$(this).offset().top;
+		setTimeout(function(){
+			$(document).scrollTop(h-100);
+		},1)
+	});
+	$(".tc_bg").click(function(){
+		$(".tc_bg").hide();
+	})
+</script>
+</body>
+</html>
